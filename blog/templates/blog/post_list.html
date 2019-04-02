@@ -5,18 +5,13 @@
 	<body>
 		<div>
 			<h1><a href="/">Jumsblog</a></h1>
-		</div>
-
-		<div>
-			<p>Wola je me souviens plus quand j'ai posté</p>
-			<h2><a href="">Le post sur les oranges</a></h2>
-			<p>Elles sont meilleures au Maroc</p>
-		</div>
-		
-		<div>
-			<p>Wola arrete</p>
-			<h2><a href="">Le post sur l'autre mosh</a></h2>
-			<p>Dylan je te le répète : wola tu es moche</p>
+			{% for post in posts %}
+				<div>
+					<p>published: {{ post.published_date }}</p>
+					<h2><a href="">{{ post.title }}</a></h2>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</div>
+			{% endfor %}
 		</div>
 	</body>
 </html>
